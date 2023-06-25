@@ -34,7 +34,6 @@ def run_forward(model, time_window_size, world_size, cached_subgraph, cached_fea
 
     # reddit
     # wdgcn-lstm
-    #pipeline_list = [0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
     #pipeline_list = [0, -1, 1, -1, 1, -1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0,0,0,0,0,0]
     #pipeline_list = [0, -1, 2, -1, 2, -1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0]
     rank_time_window_size = int((time_window_size+1)/2)
