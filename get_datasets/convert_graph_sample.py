@@ -128,7 +128,7 @@ def sample_reddit_body(instance):
     #node_map = np.load('tools/products/node_map.npy')
     #ids = torch.tensor(np.where(node_map == 0)[0])
     info = []
-    file = '../dynamic_datasets/reddit-body/{}.bin'.format(0)
+    file = '../data/reddit-body/full/snapshot{}.bin'.format(0)
     graph = load_graphs(file)[0][0]
     feat = graph.ndata['feat']
     labels = graph.ndata['label']
@@ -140,8 +140,7 @@ def sample_reddit_body(instance):
     
     num_neighbor = np.zeros([num_nodes])
     for i in tqdm(range(0, 177)):
-        #file = 'data/products/full/snapshot{}.bin'.format(i)
-        file = '../dynamic_datasets/reddit-body/{}.bin'.format(i)
+        file = '../data/reddit-body/full/snapshot{}.bin'.format(i)
         graph = load_graphs(file)[0][0]
         edges = graph.edges()[0]
         
@@ -155,8 +154,7 @@ def sample_reddit_body(instance):
 
 
     for i in tqdm(range(0, 177)):
-        #file = 'data/products/full/snapshot{}.bin'.format(i)
-        file = '../dynamic_datasets/reddit-body/{}.bin'.format(i)
+        file = '../data/reddit-body/full/snapshot{}.bin'.format(i)
         graph = load_graphs(file)[0][0]
         sampler = dgl.dataloading.MultiLayerNeighborSampler([200, 200])
         train_ids = torch.arange(0, graph.num_nodes())
@@ -186,7 +184,7 @@ def sample_as(instance):
     #node_map = np.load('tools/products/node_map.npy')
     #ids = torch.tensor(np.where(node_map == 0)[0])
     info = []
-    file = '../dynamic_datasets/AS/{}.bin'.format(0)
+    file = '../data/AS/full/snapshot{}.bin'.format(0)
     graph = load_graphs(file)[0][0]
     feat = graph.ndata['feat']
     labels = graph.ndata['label']
@@ -199,7 +197,7 @@ def sample_as(instance):
     num_neighbor = np.zeros([num_nodes])
     for i in tqdm(range(0, 733)):
         #file = 'data/products/full/snapshot{}.bin'.format(i)
-        file = '../dynamic_datasets/AS/{}.bin'.format(i)
+        file = '../data/AS/full/snapshot{}.bin'.format(i)
         graph = load_graphs(file)[0][0]
         edges = graph.edges()[0]
         
@@ -211,7 +209,7 @@ def sample_as(instance):
 
     for i in tqdm(range(0, 733)):
         #file = 'data/products/full/snapshot{}.bin'.format(i)
-        file = '../dynamic_datasets/AS/{}.bin'.format(i)
+        file = '../data/AS/full/snapshot{}.bin'.format(i)
         graph = load_graphs(file)[0][0]
         sampler = dgl.dataloading.MultiLayerFullNeighborSampler(2)
         train_ids = torch.arange(0, graph.num_nodes())
