@@ -180,16 +180,12 @@ def train_model(args, rank, local_rank, world_size, fwd_shared_memory, bwd_share
     cached_label = []
     result = []
     folder_name = 'typo_data1/typo{}{}{}{}{}{}'.format(pattern_list[0],pattern_list[1],pattern_list[2],pattern_list[3],pattern_list[4],pattern_list[5])
-    #x = [15, 11, 27, 20, 38, 9, 35, 18, 24, 0, 32, 10, 37, 1, 7, 13, 26, 30, 23, 12, 3, 8, 19, 36, 34, 31, 25, 21, 17, 4, 14, 28, 39, 33, 6, 2, 5, 29, 22, 16]
     #x = [i for i in range(29, -1, -1)]
     x = [i for i in range(0, 30)]
-    #x = [27, 17, 3, 22, 10, 18, 4, 1, 16, 24, 14, 15, 8, 20, 6, 12, 5, 19, 0, 26, 25, 2, 9, 28, 13, 11, 29, 7, 21, 23]
     
     for i in range(0, 30):
         # we add self loop edge when we construct full graph, not here
         graph_name = 'data/arxiv/full/snapshot{}.bin'.format(x[i])
-        #graph_name = 'data/products/sample/sample0/snapshot{}.bin'.format(x[i])
-        #graph_name = 'data/reddit/sample/sample1/snapshot{}.bin'.format(x[i])
         node_subgraph = load_graphs(graph_name)[0][0]
         cached_feat.append(feat[0:node_subgraph.num_nodes()])
     
@@ -201,7 +197,6 @@ def train_model(args, rank, local_rank, world_size, fwd_shared_memory, bwd_share
         cached_subgraph.append(node_subgraph)
 
     in_feat = int(feat.shape[1])
-    #in_feat = 602
     model = TGCN(in_feat=in_feat,
                            hidden_feat=args.n_hidden,
                            out_feat=40,
