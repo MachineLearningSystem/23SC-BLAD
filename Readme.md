@@ -65,7 +65,7 @@ $ echo start_server -uid $UID$| nvidia-cuda-mps-control
 ```shell
 $ # One case for example (Executing egcn using the arxiv dataset)
 $ cd experiments/ogb_graph/arxiv/egcn
-$ python multi_train_ogb_samply_group.py
+$ python multi_train_ogb_sample_group.py
 ```
 
 
