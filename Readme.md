@@ -51,7 +51,7 @@ $ # For static datasets (arxiv, products, reddit)
 $ python convert_ogb.py
 
 $ # After download all the datasets
-$ python convert_graph_samply.py --dataset YOUR_TEST_DATASET
+$ python convert_graph_sample.py --dataset YOUR_TEST_DATASET
 ```
 
 All the training data are stored in the `data/` folder.
