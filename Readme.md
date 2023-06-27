@@ -32,7 +32,7 @@ $ docker pull midway2018/blad_runtime
 $ docker run -it --gpus=all --ipc=host midway2018/blad_runtime /bin/bash 
 $ git clone https://github.com/fkh12345/BLAD.git
 ```
-2. Activate conda and create python environment with essential dependencies
+2. Activate conda and create python environment with essential dependencies.
 ```shell
 $ conda activate base
 $ cd BALD
