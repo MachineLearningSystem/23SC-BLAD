@@ -43,9 +43,9 @@ $ pip install -r requirement.txt
 The workflow of running the dynamic GNN model training can be summarized as follow:
 1. Download the public datasets, and you can use our scripts to easily obtain them. 
 ```shell
-$ cd get-datasets
+$ cd get_datasets
 $ # For real dynamic datasets
-$ ./get_public_dataset.sh
+$ ./get_public_data.sh
 $ python create_dgl_graph.py
 $ # For static datasets (arxiv, products, reddit)
 $ python convert_ogb.py
