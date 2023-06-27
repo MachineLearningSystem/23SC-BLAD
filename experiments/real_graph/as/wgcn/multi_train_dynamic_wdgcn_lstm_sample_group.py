@@ -377,15 +377,7 @@ def train_model(args, rank, local_rank, world_size, fwd_shared_memory, bwd_share
             end = time.perf_counter()
             if(step == 1 and i == train_max_index):
                 continue
-            if(fwd_time > 1.1):
-                fwd_time = fwd_time - 1.1
-            elif(fwd_time > 1):
-                fwd_time = fwd_time - 1
-            
-            if(bwd_time > 1.1):
-                bwd_time = bwd_time - 1.1
-            elif(bwd_time > 1):
-                bwd_time = bwd_time - 1
+
             time_list.append([fwd_time, bwd_time, fwd_time + bwd_time, end - start111, fwd_comm + bwd_comm])
             
 
