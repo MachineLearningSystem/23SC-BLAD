@@ -46,7 +46,7 @@ The workflow of running the dynamic GNN model training can be summarized as foll
 $ cd get-datasets
 $ # For real dynamic datasets
 $ ./get_public_dataset.sh
-$ python create_dgl_data.py
+$ python create_dgl_graph.py
 $ # For static datasets (arxiv, products, reddit)
 $ python convert_ogb.py
 
