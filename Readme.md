@@ -61,7 +61,7 @@ All the training data are stored in the `data/` folder.
 $ nvidia-cuda-mps-control -d
 $ echo start_server -uid $UID$| nvidia-cuda-mps-control
 ```
-3. Execute the training scripts. All the test cases are stored in one separated folder..
+3. Execute the training scripts. All the test cases are stored in one separated folder.
 ```shell
 $ # One case for example (Executing egcn using the arxiv dataset)
 $ cd experiments/ogb_graph/arxiv/egcn
