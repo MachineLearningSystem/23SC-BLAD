@@ -36,7 +36,7 @@ $ git clone https://github.com/fkh12345/BLAD.git
 ```shell
 $ conda activate base
 $ cd BALD
-$ pip install -r requirement.txt
+$ pip install -r requirements.txt
 ```
 
 ## How to run
