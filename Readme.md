@@ -29,29 +29,29 @@ Dynamic graph networks are widely used for learning time-evolving graphs, but pr
 1. Download and run the provided runtime backend with docker.
 ```shell
 $ docker pull midway2018/blad_runtime
-$ docker run -it --gpus=all --ipc=host  -it midway2018/blad_runtime /bin/bash 
+$ docker run -it --gpus=all --ipc=host midway2018/blad_runtime /bin/bash 
 $ git clone https://github.com/fkh12345/BLAD.git
 ```
-2. Activate conda and create python environment with essential dependencies
+2. Activate conda and create python environment with essential dependencies.
 ```shell
 $ conda activate base
 $ cd BALD
-$ pip install -r requirement.txt
+$ pip install -r requirements.txt
 ```
 
 ## How to run
 The workflow of running the dynamic GNN model training can be summarized as follow:
 1. Download the public datasets, and you can use our scripts to easily obtain them. 
 ```shell
-$ cd get-datasets
+$ cd get_datasets
 $ # For real dynamic datasets
-$ ./get_public_dataset.sh
-$ python create_dgl_data.py
+$ ./get_public_data.sh
+$ python create_dgl_graph.py
 $ # For static datasets (arxiv, products, reddit)
 $ python convert_ogb.py
 
 $ # After download all the datasets
-$ python convert_graph_samply.py --dataset YOUR_TEST_DATASET
+$ python convert_graph_sample.py --dataset YOUR_TEST_DATASET
 ```
 
 All the training data are stored in the `data/` folder.
@@ -61,11 +61,11 @@ All the training data are stored in the `data/` folder.
 $ nvidia-cuda-mps-control -d
 $ echo start_server -uid $UID$| nvidia-cuda-mps-control
 ```
-3. Execute the training scripts. All the test cases are stored in one separated folder..
+3. Execute the training scripts. All the test cases are stored in one separated folder.
 ```shell
 $ # One case for example (Executing egcn using the arxiv dataset)
 $ cd experiments/ogb_graph/arxiv/egcn
-$ python multi_train_ogb_samply_group.py
+$ python multi_train_ogb_sample_group.py
 ```
 
 
