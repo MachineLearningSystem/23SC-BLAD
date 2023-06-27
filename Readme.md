@@ -29,7 +29,7 @@ Dynamic graph networks are widely used for learning time-evolving graphs, but pr
 1. Download and run the provided runtime backend with docker.
 ```shell
 $ docker pull midway2018/blad_runtime
-$ docker run -it --gpus=all --ipc=host  -it midway2018/blad_runtime /bin/bash 
+$ docker run -it --gpus=all --ipc=host midway2018/blad_runtime /bin/bash 
 $ git clone https://github.com/fkh12345/BLAD.git
 ```
 2. Activate conda and create python environment with essential dependencies
